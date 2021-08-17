@@ -1,6 +1,7 @@
 # Form/Window Controller - Source Code File
 
 load "moneyView.ring"
+load "stdlibcore.ring"
 
 import System.GUI
 
@@ -73,17 +74,6 @@ class moneyController from windowsControllerParent
 		oView.txtStatus.SetText(cStatus)
 		oView.txtAmount.SetText(""+nAmount)
 
-	func RandomList aInput
-		aOutput = []
-		while len(aInput) > 1
-			nIndex = random(len(aInput)-1)
-			nIndex++
-			aOutput + aInput[nIndex]
-			del(aInput,nIndex)
-		end
-		aOutput + aInput[1]
-		return aOutput
-	
 	func MoneyCase nIndex
 
 		if nOpened >= nPackages return ok
